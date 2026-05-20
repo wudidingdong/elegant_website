@@ -1,6 +1,6 @@
 import type { I18nConfig, I18nRuntimeConfig } from '@/types/i18n';
 
-const DEFAULT_LOCALE = 'en';
+const DEFAULT_LOCALE = 'zh';
 
 function normalizeLocaleCode(locale: string): string {
   return locale.trim().replace('_', '-').toLowerCase();
