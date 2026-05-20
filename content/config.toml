@@ -33,9 +33,9 @@ enable_likes = true
 enable_one_page_mode = false
 
 [i18n]
-enabled = true
+enabled = false
 locales = ["zh", "en"]
-default_locale = "en"
+default_locale = "zh"
 # "auto" means the locale will be determined by the browser's language setting, "fixed" means the locale will be fixed to the default locale (but can be switched still, if you want to disable, set "enable=false")
 mode = "auto"
 fixed_locale = "en"
