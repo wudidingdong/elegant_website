@@ -1,4 +1,4 @@
 type = "publication"
 title = "论文"
-description = "在这个页面中，仅罗列了第一作者的十余篇论文，若要浏览完整的论文列表，请访问我的[学术主页](https://wudidingdong.github.io/)。"
+description = "在这个页面中，仅罗列了第一作者的十余篇论文，若要浏览完整的论文列表，请访问我的学术主页：https://wudidingdong.github.io/"
 source = "publications.bib"
