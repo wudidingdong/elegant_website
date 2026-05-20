@@ -1,12 +1,12 @@
 [site]
-title = "丁东"
+title = "丁东 Ding Dong"
 description = "丁东的个人主页。"
 last_updated = "2026年05月20日"
 
 [author]
 name = "丁东"
 title = "讲师"
-institution = "上海电机学院"
+institution = "上海电机学院 (Shanghai DianJi University)"
 
 [social]
 location = "上海，中国"
