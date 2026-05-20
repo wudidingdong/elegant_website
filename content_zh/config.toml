@@ -22,7 +22,7 @@ target = "about"
 href = "/"
 
 [[navigation]]
-title = "科研"
+title = "论文"
 type = "page"
 target = "publications"
 href = "/publications"
@@ -34,7 +34,7 @@ target = "teaching"
 href = "/teaching"
 
 [[navigation]]
-title = "荣誉"
+title = "项目与荣誉"
 type = "page"
 target = "awards"
 href = "/awards"
