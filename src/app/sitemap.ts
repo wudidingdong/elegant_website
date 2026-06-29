@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://wudidingdong.netlify.app/'
+  const baseUrl = 'https://wudidingdong.netlify.app'
 
   // 网站静态路由
   const routes = [
