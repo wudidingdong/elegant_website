@@ -132,14 +132,14 @@ export default function RootLayout({
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7MKF74437"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6X1MHHKGM5"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-P7MKF74437');
+              gtag('config', 'G-6X1MHHKGM5');
             `,
           }}
         />
