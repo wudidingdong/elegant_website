@@ -131,6 +131,19 @@ export default function RootLayout({
   return (
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7MKF74437"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-P7MKF74437');
+            `,
+          }}
+        />
+        
         <meta name="msvalidate.01" content="8062501EF607271D084F879FFDE26D93" />
         <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://jialeliu.com" />
