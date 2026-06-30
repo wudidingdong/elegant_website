@@ -1,11 +1,11 @@
 [site]
-title = "Dong Ding"
+title = "丁东 Ding Dong"
 description = "A teacher at Shanghai DianJi University, School of Electrical Engineering."
 favicon = "/favicon.svg"
 last_updated = "May 20, 2026"
 
 [author]
-name = "丁东 Ding Dong"
+name = "Dong Ding"
 title = "Dr."
 institution = "上海电机学院 (Shanghai DianJi University)"
 avatar = "/bio.jpg"
