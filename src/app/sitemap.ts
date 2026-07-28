@@ -1,22 +1,29 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { getConfig } from '@/lib/config';
+import { getRuntimeI18nConfig } from '@/lib/i18n/config';
+import { absoluteSiteUrl } from '@/lib/seo';
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://wudidingdong.netlify.app'
+  const baseConfig = getConfig();
+  const runtimeI18n = getRuntimeI18nConfig(baseConfig.i18n);
+  const localizedConfig = getConfig(runtimeI18n.defaultLocale);
 
-  // 网站静态路由
-  const routes = [
-    '',              // 对应 href = "/" (关于我)
-    '/publications', // 对应 href = "/publications" (论文)
-    '/teaching',     // 对应 href = "/teaching" (教学)
-    '/awards',       // 对应 href = "/awards" (项目与荣誉)
-  ]
+  const routes = Array.from(
+    new Set(
+      localizedConfig.navigation
+        .filter((item) => item.type === 'page')
+        .map((item) => item.href)
+    )
+  );
 
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    // next.config.ts enables trailingSlash, so publish the URL that Netlify
+    // serves directly instead of its redirecting, slashless counterpart.
+    url: absoluteSiteUrl(route),
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const, // 建议搜索引擎每月抓取一次
-    priority: route === '' ? 1 : 0.8,    // 首页权重设为最高 1.0，子页面设为 0.8
-  }))
+    changeFrequency: 'monthly' as const,
+    priority: route === '/' ? 1 : 0.8,
+  }));
 }

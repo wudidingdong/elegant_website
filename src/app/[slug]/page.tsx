@@ -12,6 +12,7 @@ import {
 
 import { Metadata } from 'next';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
+import { canonicalPath } from '@/lib/seo';
 
 function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleData | null {
   const pageConfig = getPageConfig(slug, locale) as BasePageConfig | null;
@@ -70,6 +71,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: pageConfig.title,
     description: pageConfig.description,
+    alternates: {
+      canonical: canonicalPath(slug),
+    },
   };
 }
 

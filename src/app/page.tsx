@@ -5,6 +5,13 @@ import HomePageClient, { type HomePageLocaleData } from '@/components/home/HomeP
 import { Publication } from '@/types/publication';
 import { BasePageConfig, PublicationPageConfig, TextPageConfig, CardPageConfig } from '@/types/page';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 interface SectionConfig {
   id: string;

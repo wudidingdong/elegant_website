@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { LocaleProvider } from '@/components/ui/LocaleProvider';
 import { getConfig } from '@/lib/config';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
+import { SITE_URL } from '@/lib/seo';
 import type { SiteConfig } from '@/lib/config';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const openGraphLocale = runtimeI18n.defaultLocale === 'zh' ? 'zh_CN' : 'en_US';
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: {
       default: config.site.title,
       template: `%s | ${config.site.title}`,
@@ -23,6 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: config.author.name }],
     creator: config.author.name,
     publisher: config.author.name,
+    robots: {
+      index: true,
+      follow: true,
+    },
     icons: {
       icon: config.site.favicon,
     },
